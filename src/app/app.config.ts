@@ -1,9 +1,9 @@
-import { ApplicationConfig, provideBrowserGlobalErrorListeners } from '@angular/core';
-import { provideClientHydration } from '@angular/platform-browser';
+import { ApplicationConfig, provideZonelessChangeDetection } from '@angular/core';
+import { provideHttpClient } from '@angular/common/http';
 
 export const appConfig: ApplicationConfig = {
   providers: [
-    provideBrowserGlobalErrorListeners(), provideClientHydration(),
-    
+    provideZonelessChangeDetection(), // Back to modern Zoneless mode
+    provideHttpClient()
   ]
 };
